@@ -22,7 +22,8 @@ const Intro = () => {
           </a>
 
           <a
-            href="#"
+            href="/resume.pdf"
+            download
             className="px-6 py-3 border border-gray-900 rounded-md hover:bg-gray-100 transition"
           >
             Download Resume
