@@ -4,58 +4,76 @@ import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 const Projects = () => {
   const projects = [
     {
-      title: "Employee Management System",
+      title: "Chai & Fund",
       description:
-        "Full-stack platform with authentication, task management and role-based access.",
-      tech: ["React", "Node.js", "MongoDB", "Express"],
-      image: "/project1.jpg",
-      github: "#",
-      live: "#",
+        "A crowdfunding platform for creators.",
+      tech: ["Next.js", "React", "Node", "NextAuth", "MongoDB Atlas", "Tailwind CSS", "Toastify"],
+      image: "/projects/chaifund.png",
+      github: "https://github.com/ArunShivhare/Chai_and_Fund.git",
+      live: "https://chai-and-fund.vercel.app/",
     },
     {
-      title: "AI Chatbot Assistant",
+      title: "PassMan",
       description:
-        "Intelligent chatbot powered by NLP models for real-time responses.",
-      tech: ["Python", "Flask", "OpenAI API"],
-      image: "/project2.jpg",
-      github: "#",
-      live: "#",
+        "Securely manage your passwords in one place",
+      tech: ["React.js", "Node.js", "Express.js", "MongoDB Atlas", "JWT", "Tailwind CSS", "React Router", "Toastify"],
+      image: "/projects/passman.png",
+      github: "https://github.com/ArunShivhare/PassMan.git",
+      live: "https://pass-man-one.vercel.app/",
     },
     {
-      title: "AI Chatbot Assistant",
+      title: "Nexus",
       description:
-        "Intelligent chatbot powered by NLP models for real-time responses.",
-      tech: ["Python", "Flask", "OpenAI API"],
-      image: "/project2.jpg",
-      github: "#",
-      live: "#",
+        "Personal Team Management Web Application ",
+      tech: ["React", "Node", "Express", "MongoDB", "TailWind CSS", "Context & Fetch API", "JWT", "PostMan"],
+      image: "/projects/tms.png",
+      github: "https://github.com/ArunShivhare/Team-Management-System.git",
+      live: "https://github.com/ArunShivhare/Team-Management-System.git",
     },
     {
-      title: "AI Chatbot Assistant",
+      title: "TaskiFy",
       description:
-        "Intelligent chatbot powered by NLP models for real-time responses.",
-      tech: ["Python", "Flask", "OpenAI API"],
-      image: "/project2.jpg",
-      github: "#",
-      live: "#",
-    },
-    {
-      title: "AI Chatbot Assistant",
-      description:
-        "Intelligent chatbot powered by NLP models for real-time responses.",
-      tech: ["Python", "Flask", "OpenAI API"],
-      image: "/project2.jpg",
-      github: "#",
-      live: "#",
+        "Plan smart. Execute better.",
+      tech: ["React", "Tailwind CSS", "React-Icons"],
+      image: "/projects/taskify.png",
+      github: "https://github.com/ArunShivhare/Taskify.git",
+      live: "https://taskify-sepia-psi.vercel.app/",
     },
     {
       title: "Portfolio Website",
       description:
         "Modern responsive portfolio showcasing projects and achievements.",
-      tech: ["React", "Tailwind", "Framer Motion"],
-      image: "/project3.jpg",
-      github: "#",
-      live: "#",
+      tech: ["React", "Tailwind CSS", "React-Icons"],
+      image: "/projects/portfolio.png",
+      github: "https://github.com/ArunShivhare/portfolio.git",
+      live: "https://github.com/ArunShivhare/portfolio.git",
+    },
+    {
+      title: "X homepage Layout",
+      description:
+        "Replicate X homepage layout ",
+      tech: ["React", "Tailwind CSS"],
+      image: "/projects/xhl.png",
+      github: "https://github.com/ArunShivhare/X-homepage-clone.git",
+      live: "https://github.com/ArunShivhare/X-homepage-clone.git",
+    },
+    {
+      title: "Personal Music Player",
+      description:
+        "Build a responsive personal music player",
+      tech: ["HTML", "CSS", "JavaScript"],
+      image: "/projects/pmp.png",
+      github: "https://github.com/ArunShivhare/Personal-Music-Player.git",
+      live: "https://github.com/ArunShivhare/Personal-Music-Player.git",
+    },
+    {
+      title: "Netflix Homepage Clone",
+      description:
+        "Replicate netflix homepage and make it responsive",
+      tech: ["HTML", "CSS"],
+      image: "/projects/nhc.png",
+      github: "https://github.com/ArunShivhare/netflix-homepage-clone.git",
+      live: "https://github.com/ArunShivhare/netflix-homepage-clone.git",
     },
   ];
 
@@ -64,7 +82,7 @@ const Projects = () => {
       id="projects"
       className="py-28 bg-white dark:bg-gray-950 transition-colors duration-500"
     >
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="max-w-375 mx-auto px-6">
 
         {/* Section Header */}
         <div className="text-center mb-20">
@@ -92,7 +110,7 @@ const Projects = () => {
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                  className="w-full h-full  group-hover:scale-105 transition duration-500"
                 />
 
                 {/* Overlay */}
