@@ -100,7 +100,7 @@ const Achievements = () => {
   }, []);
 
   return (
-    <section className="py-28 bg-gray-50 dark:bg-gray-950 transition-colors duration-500">
+    <section id="achievements" className="py-28 bg-gray-50 dark:bg-gray-950 transition-colors duration-500">
       <div className="max-w-6xl mx-auto px-6">
 
         <div className="text-center mb-20">
