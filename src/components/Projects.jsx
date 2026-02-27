@@ -82,7 +82,7 @@ const Projects = () => {
       id="projects"
       className="py-28 bg-white dark:bg-gray-950 transition-colors duration-500"
     >
-      <div className="max-w-375 mx-auto px-6">
+      <div className="max-w-350 mx-auto px-6">
 
         {/* Section Header */}
         <div className="text-center mb-20">
