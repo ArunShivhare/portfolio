@@ -82,7 +82,7 @@ const Projects = () => {
       id="projects"
       className="py-28 bg-white dark:bg-gray-950 transition-colors duration-500"
     >
-      <div className="max-w-350 mx-auto px-6">
+      <div className="max-w-6xl mx-auto px-6">
 
         {/* Section Header */}
         <div className="text-center mb-20">
@@ -110,11 +110,20 @@ const Projects = () => {
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full  group-hover:scale-105 transition duration-500"
+                  className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
                 />
 
                 {/* Overlay */}
-                <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 flex items-center justify-center gap-6 transition duration-300">
+                <div
+                  className="
+      absolute inset-0 
+      bg-black/60 
+      flex items-center justify-center gap-6
+      opacity-100 md:opacity-0 
+      md:group-hover:opacity-100
+      transition duration-300
+    "
+                >
                   <a
                     href={project.live}
                     target="_blank"
