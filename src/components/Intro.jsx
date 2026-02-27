@@ -44,33 +44,33 @@ const Intro = () => {
 
             {/* Social Icons */}
             <div className="mt-8 flex gap-5">
-                        <a
-                          href="https://github.com/ArunShivhare"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="w-10 h-10 flex items-center justify-center rounded-full border border-gray-300 dark:border-gray-700 text-gray-600 dark:text-gray-400 hover:border-indigo-600 hover:text-indigo-600 transition duration-300"
-                        >
-                          <FaGithub />
-                        </a>
-              
-                        <a
-                          href="www.linkedin.com/in/arun-shivhare"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="w-10 h-10 flex items-center justify-center rounded-full border border-gray-300 dark:border-gray-700 text-gray-600 dark:text-gray-400 hover:border-indigo-600 hover:text-indigo-600 transition duration-300"
-                        >
-                          <FaLinkedin />
-                        </a>
-              
-                        <a
-                          href="https://leetcode.com/u/Arun_Shivhare_/"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="w-10 h-10 flex items-center justify-center rounded-full border border-gray-300 dark:border-gray-700 text-gray-600 dark:text-gray-400 hover:border-indigo-600 hover:text-indigo-600 transition duration-300"
-                        >
-                          <SiLeetcode />
-                        </a>
-                      </div>
+              <a
+                href="https://github.com/ArunShivhare"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 flex items-center justify-center rounded-full border border-gray-300 dark:border-gray-700 text-gray-600 dark:text-gray-400 hover:border-indigo-600 hover:text-indigo-600 transition duration-300"
+              >
+                <FaGithub />
+              </a>
+
+              <a
+                href="https://www.linkedin.com/in/arun-shivhare"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 flex items-center justify-center rounded-full border border-gray-300 dark:border-gray-700 text-gray-600 dark:text-gray-400 hover:border-indigo-600 hover:text-indigo-600 transition duration-300"
+              >
+                <FaLinkedin />
+              </a>
+
+              <a
+                href="https://leetcode.com/u/Arun_Shivhare_/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 flex items-center justify-center rounded-full border border-gray-300 dark:border-gray-700 text-gray-600 dark:text-gray-400 hover:border-indigo-600 hover:text-indigo-600 transition duration-300"
+              >
+                <SiLeetcode />
+              </a>
+            </div>
           </div>
 
           {/* RIGHT */}
