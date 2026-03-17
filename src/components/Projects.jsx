@@ -5,35 +5,83 @@ const Projects = () => {
   const projects = [
     {
       title: "Chai & Fund",
-      description:
-        "A crowdfunding platform for creators.",
-      tech: ["Next.js", "React", "Node", "NextAuth", "MongoDB Atlas", "Tailwind CSS", "Toastify"],
+      description: "A crowdfunding platform for creators.",
+      tech: [
+        "Next.js",
+        "React",
+        "Node",
+        "NextAuth",
+        "MongoDB Atlas",
+        "Tailwind CSS",
+        "Toastify",
+      ],
       image: "/projects/chaifund.png",
       github: "https://github.com/ArunShivhare/Chai_and_Fund.git",
       live: "https://chai-and-fund.vercel.app/",
     },
     {
-      title: "PassMan",
+      title: "Dynamic Workflow Engine",
       description:
-        "Securely manage your passwords in one place",
-      tech: ["React.js", "Node.js", "Express.js", "MongoDB Atlas", "JWT", "Tailwind CSS", "React Router", "Toastify"],
+        "This project implements a Dynamic Workflow Engine using Payload CMS",
+      tech: ["Payload CMS", "TypeScript"],
+      image: "/projects/dwe.png",
+      github:
+        "https://gitfront.io/r/ArunShivhare/pMJjNSh3A35Y/workFlow-engine/",
+      live: "https://work-flow-engine-three.vercel.app/",
+    },
+    {
+      title: "Kerna",
+      description: "Where Strategy Meets Spark.",
+      tech: ["React", "TailWind CSS"],
+      image: "/projects/kerna.png",
+      github: "https://github.com/ArunShivhare/kerna.git",
+      live: "https://kerna-khaki.vercel.app/",
+    },
+    {
+      title: "Photo Gallery",
+      description: "Responsive photo gallery with faovrite toggling",
+      tech: ["React", "TailWind CSS"],
+      image: "/projects/pg.png",
+      github: "https://github.com/ArunShivhare/photo-gallery.git",
+      live: "https://photo-gallery-hmvo261b8-arunshivhares-projects.vercel.app/",
+    },
+    {
+      title: "PassMan",
+      description: "Securely manage your passwords in one place",
+      tech: [
+        "React.js",
+        "Node.js",
+        "Express.js",
+        "MongoDB Atlas",
+        "JWT",
+        "Tailwind CSS",
+        "React Router",
+        "Toastify",
+      ],
       image: "/projects/passman.png",
       github: "https://github.com/ArunShivhare/PassMan.git",
       live: "https://pass-man-one.vercel.app/",
     },
     {
       title: "Nexus",
-      description:
-        "Personal Team Management Web Application ",
-      tech: ["React", "Node", "Express", "MongoDB", "TailWind CSS", "Context & Fetch API", "JWT", "PostMan"],
+      description: "Personal Team Management Web Application ",
+      tech: [
+        "React",
+        "Node",
+        "Express",
+        "MongoDB",
+        "TailWind CSS",
+        "Context & Fetch API",
+        "JWT",
+        "PostMan",
+      ],
       image: "/projects/tms.png",
       github: "https://github.com/ArunShivhare/Team-Management-System.git",
       live: "https://github.com/ArunShivhare/Team-Management-System.git",
     },
     {
       title: "TaskiFy",
-      description:
-        "Plan smart. Execute better.",
+      description: "Plan smart. Execute better.",
       tech: ["React", "Tailwind CSS", "React-Icons"],
       image: "/projects/taskify.png",
       github: "https://github.com/ArunShivhare/Taskify.git",
@@ -50,8 +98,7 @@ const Projects = () => {
     },
     {
       title: "X homepage Layout",
-      description:
-        "Replicate X homepage layout ",
+      description: "Replicate X homepage layout ",
       tech: ["React", "Tailwind CSS"],
       image: "/projects/xhl.png",
       github: "https://github.com/ArunShivhare/X-homepage-clone.git",
@@ -59,8 +106,7 @@ const Projects = () => {
     },
     {
       title: "Personal Music Player",
-      description:
-        "Build a responsive personal music player",
+      description: "Build a responsive personal music player",
       tech: ["HTML", "CSS", "JavaScript"],
       image: "/projects/pmp.png",
       github: "https://github.com/ArunShivhare/Personal-Music-Player.git",
@@ -68,8 +114,7 @@ const Projects = () => {
     },
     {
       title: "Netflix Homepage Clone",
-      description:
-        "Replicate netflix homepage and make it responsive",
+      description: "Replicate netflix homepage and make it responsive",
       tech: ["HTML", "CSS"],
       image: "/projects/nhc.png",
       github: "https://github.com/ArunShivhare/netflix-homepage-clone.git",
@@ -83,7 +128,6 @@ const Projects = () => {
       className="py-28 bg-white dark:bg-gray-950 transition-colors duration-500"
     >
       <div className="max-w-6xl mx-auto px-6">
-
         {/* Section Header */}
         <div className="text-center mb-20">
           <p className="text-sm uppercase tracking-widest text-indigo-600 mb-4">
@@ -93,8 +137,8 @@ const Projects = () => {
             Recent <span className="text-indigo-600">Projects</span>
           </h2>
           <p className="mt-6 text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-            A collection of projects showcasing modern development practices
-            and problem-solving skills.
+            A collection of projects showcasing modern development practices and
+            problem-solving skills.
           </p>
         </div>
 
@@ -165,11 +209,9 @@ const Projects = () => {
                   ))}
                 </div>
               </div>
-
             </div>
           ))}
         </div>
-
       </div>
     </section>
   );
