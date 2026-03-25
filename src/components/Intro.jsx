@@ -88,7 +88,7 @@ const Intro = () => {
             {/* Main Image */}
             <div className="relative w-80 h-80 rounded-3xl overflow-hidden shadow-2xl bg-white dark:bg-gray-900">
               <img
-                src="/profile.jpeg"
+                src="/profile.png"
                 alt="Arun Shivhare"
                 className="w-full h-full object-cover"
               />
