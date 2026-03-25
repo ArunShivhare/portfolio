@@ -90,7 +90,7 @@ const Intro = () => {
               <img
                 src="/profile.png"
                 alt="Arun Shivhare"
-                className="w-full h-full object-contain"
+                className="w-full h-87.5 object-cover"
               />
             </div>
 
