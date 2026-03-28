@@ -15,15 +15,19 @@ html, body {
   scrollbar-width: none;     /* Firefox */
 }
 
-@keyframes orbit {
-  0% {
-    transform: rotate(0deg) translateX(20px) rotate(0deg);
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
   }
-  100% {
-    transform: rotate(360deg) translateX(20px) rotate(-360deg);
+  to {
+    transform: rotate(360deg);
   }
 }
 
-.orbit-animation {
-  animation: orbit 12s linear infinite;
+.fan-spin {
+  /* Set the speed here (e.g., 8s for a slower, elegant spin) */
+  animation: spin 8s linear infinite;
+  /* Ensures it rotates around its own center */
+  transform-origin: center; 
 }
+
