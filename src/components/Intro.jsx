@@ -6,7 +6,7 @@ import InteractiveNetwork from "./InteractiveNetwork";
 
 const Intro = () => {
   return (
-    <section className="min-h-screen flex items-center bg-white dark:bg-gray-950 transition-colors duration-500 pt-28">
+    <section className="min-h-screen flex items-center bg-white dark:bg-gray-950 transition-colors duration-500 pt-28 overflow-hidden">
       {/* <InteractiveNetwork /> */}
       <div className="max-w-6xl mx-auto px-6 w-full">
         <div className="grid md:grid-cols-2 gap-20 items-center">
