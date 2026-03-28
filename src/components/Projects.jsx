@@ -534,7 +534,7 @@ const Projects = () => {
               {selected.tech.map((item, i) => (
                 <span
                   key={i}
-                  className="px-3 py-1 text-xs bg-gray-100 dark:bg-gray-800 rounded-full"
+                  className="px-3 py-1 text-xs bg-gray-100 dark:bg-gray-100 rounded-full"
                 >
                   {item}
                 </span>
@@ -554,7 +554,7 @@ const Projects = () => {
               <a
                 href={selected.github}
                 target="_blank"
-                className="px-5 py-2 border rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition"
+                className="px-5 py-2 border rounded-lg hover:bg-gray-100 dark:hover:bg-gray-100 transition"
               >
                 GitHub
               </a>
