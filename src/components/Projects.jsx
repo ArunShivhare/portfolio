@@ -39,14 +39,10 @@ const Projects = () => {
       github: "https://github.com/ArunShivhare/Chai_and_Fund.git",
       live: "https://chai-and-fund.vercel.app/",
     },
-        {
+    {
       title: "Data Structure Simulator",
       description: "Learn Data Structures Visually & Easily.",
-      tech: [
-        "React",
-        "Tailwind CSS",
-        "Framer Motion",
-      ],
+      tech: ["React", "Tailwind CSS", "Framer Motion"],
       image: "/projects/DSS.png",
       details: {
         overview:
@@ -68,6 +64,44 @@ const Projects = () => {
       },
       github: "https://github.com/ArunShivhare/DS-Simulator.git",
       live: "https://ds-simulator-iota.vercel.app/",
+    },
+    {
+      title: "Nexus V2.0",
+      description: "Full-Stack Team Management Platform",
+      tech: [
+        "React",
+        "Node.js",
+        "Express.js",
+        "MongoDB Atlas",
+        "Tailwind CSS",
+        "Firebase Authentication",
+      ],
+      image: "/projects/nexus.png",
+
+      details: {
+        overview:
+          "A full-stack SaaS-style team management platform that enables leaders to manage teams and assign tasks, while members track and update their work through interactive dashboards.",
+
+        features: [
+          "Google authentication using Firebase with role-based access (leader/member)",
+          "Task lifecycle management (pending, completed, failed)",
+          "Leader dashboard for team creation, task assignment, and performance tracking",
+          "Member dashboard with real-time task updates and status actions",
+          "Responsive UI with dark/light mode and modern UX (modals, previews)",
+          "RESTful APIs with MongoDB for efficient data handling",
+        ],
+
+        howItWorks: [
+          "User logs in using Google and selects role (leader or member)",
+          "Leaders create teams and add members via dashboard",
+          "Tasks are assigned to members with descriptions and deadlines",
+          "Members update task status (completed/failed) from their dashboard",
+          "System tracks progress and displays analytics in dashboards",
+        ],
+      },
+
+      github: "https://github.com/ArunShivhare/Nexus_frontend",
+      live: "https://nexus-frontend-orpin-theta.vercel.app/",
     },
     {
       title: "Dynamic Workflow Engine",
