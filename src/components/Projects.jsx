@@ -104,6 +104,50 @@ const Projects = () => {
       live: "https://nexus-frontend-orpin-theta.vercel.app/",
     },
     {
+      title: "Golf Platform",
+      description: "Full-Stack Subscription-Based Gaming & Charity Platform",
+      tech: [
+        "Next.js",
+        "React",
+        "Supabase",
+        "PostgreSQL",
+        "Tailwind CSS",
+        "Vercel",
+      ],
+      image: "/projects/golf.png",
+
+      details: {
+        overview:
+          "A full-stack SaaS-style platform where users can enter game scores, participate in monthly draws, win rewards, and contribute a portion of their winnings to charities. The system includes secure authentication, subscription-based access, and a complete admin workflow.",
+
+        features: [
+          "Authentication system with secure login and session handling",
+          "Subscription-based access control with 30-day validity tracking",
+          "Score submission system with latest 5 scores retention logic",
+          "Automated draw system with random number generation and match logic (3/4/5 matches)",
+          "Prize distribution system with dynamic pool calculation and multi-winner split",
+          "Charity contribution system allowing users to select charities and percentage donation",
+          "Admin panel with secure login, draw execution, winner verification, and payout tracking",
+          "Proof submission and approval workflow for winnings",
+          "Row Level Security (RLS) implemented in Supabase for database protection",
+          "Responsive and modern UI with dashboard analytics and clean UX",
+        ],
+
+        howItWorks: [
+          "User signs up/logs in and subscribes to access the platform",
+          "User submits scores which are stored and limited to latest 5 entries",
+          "System runs periodic draws generating winning numbers",
+          "User scores are matched against draw results to determine winnings",
+          "Prize pool is calculated and distributed based on match count",
+          "User selects a charity and contributes a percentage of winnings",
+          "Admin verifies winners, reviews proof submissions, and marks payouts",
+        ],
+      },
+
+      github: "https://github.com/ArunShivhare/Golf-Charity.git",
+      live: "https://golf-charity-sepia.vercel.app/",
+    },
+    {
       title: "Dynamic Workflow Engine",
       description:
         "This project implements a Dynamic Workflow Engine using Payload CMS",
@@ -159,6 +203,37 @@ const Projects = () => {
       },
       github: "https://github.com/ArunShivhare/kerna.git",
       live: "https://kerna-khaki.vercel.app/",
+    },
+    {
+      title: "Elementum Landing Page",
+      description:
+        "Pixel-perfect responsive React implementation of a Figma design with Docker support",
+      tech: ["React", "Vite", "Tailwind CSS", "Docker"],
+      image: "/projects/elementum.png",
+
+      details: {
+        overview:
+          "A fully responsive landing page built by converting a Figma design into a production-ready React application. The project focuses on pixel-accurate UI, reusable component architecture, and real-world deployment using Docker.",
+
+        features: [
+          "Pixel-close implementation of Figma design",
+          "Fully responsive (mobile, tablet, desktop)",
+          "Reusable component-based architecture",
+          "Modern UI with Tailwind CSS",
+          "Interactive elements (hover effects)",
+          "Dockerized setup for easy deployment",
+        ],
+
+        howItWorks: [
+          "Users land on a visually structured homepage",
+          "Each section (Hero, About, Offer, Testimonials, etc.) is modular",
+          "Responsive design adapts across devices",
+          "Docker allows the app to run in a consistent environment",
+        ],
+      },
+
+      github: "https://github.com/ArunShivhare/Elementum.git",
+      live: "https://elementum-kohl.vercel.app/",
     },
     {
       title: "Photo Gallery",
