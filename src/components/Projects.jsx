@@ -1,70 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { FaGithub, FaExternalLinkAlt, FaTimes } from "react-icons/fa";
+import { motion, AnimatePresence } from "framer-motion";
+import { FaGithub, FaExternalLinkAlt, FaTimes, FaArrowRight, FaChevronRight, FaChevronUp } from "react-icons/fa";
 
 const Projects = () => {
   const [selected, setSelected] = useState(null);
+  const [showAll, setShowAll] = useState(false);
 
   const projects = [
-    {
-      title: "Chai & Fund",
-      description: "A crowdfunding platform for creators.",
-      tech: [
-        "Next.js",
-        "React",
-        "Node",
-        "NextAuth",
-        "MongoDB Atlas",
-        "Tailwind CSS",
-        "Toastify",
-      ],
-      image: "/projects/chaifund.png",
-      details: {
-        overview:
-          "A creator-friendly crowdfunding platform where fans support creators by buying them a chai.",
-
-        features: [
-          "Direct financial support from fans",
-          "Creator dashboards",
-          "Authentication system",
-          "Community interaction",
-        ],
-
-        howItWorks: [
-          "Fans discover creators",
-          "Support by buying chai",
-          "Creators receive funds",
-          "Build stronger connections",
-        ],
-      },
-      github: "https://github.com/ArunShivhare/Chai_and_Fund.git",
-      live: "https://chai-and-fund.vercel.app/",
-    },
-    {
-      title: "Data Structure Simulator",
-      description: "Learn Data Structures Visually & Easily.",
-      tech: ["React", "Tailwind CSS", "Framer Motion"],
-      image: "/projects/DSS.png",
-      details: {
-        overview:
-          "Understand how data structures work internally with beautiful animations and step-by-step simulations. No more confusion — just clear concepts.",
-
-        features: [
-          "Interactive Visualization",
-          "Step-by-Step Simulation",
-          "Code Preview",
-          "Beginner Friendly",
-        ],
-
-        howItWorks: [
-          "Watch data structures come to life with smooth animations.",
-          "Understand each operation step clearly and intuitively.",
-          "View implementations in multiple languages.",
-          "Designed for students learning DSA from scratch.",
-        ],
-      },
-      github: "https://github.com/ArunShivhare/DS-Simulator.git",
-      live: "https://ds-simulator-iota.vercel.app/",
-    },
     {
       title: "Nexus V2.0",
       description: "Full-Stack Team Management Platform",
@@ -102,6 +44,66 @@ const Projects = () => {
 
       github: "https://github.com/ArunShivhare/Nexus_frontend",
       live: "https://nexus-frontend-orpin-theta.vercel.app/",
+    },
+    {
+      title: "Data Structure Simulator",
+      description: "Learn Data Structures Visually & Easily.",
+      tech: ["React", "Tailwind CSS", "Framer Motion"],
+      image: "/projects/DSS.png",
+      details: {
+        overview:
+          "Understand how data structures work internally with beautiful animations and step-by-step simulations. No more confusion — just clear concepts.",
+
+        features: [
+          "Interactive Visualization",
+          "Step-by-Step Simulation",
+          "Code Preview",
+          "Beginner Friendly",
+        ],
+
+        howItWorks: [
+          "Watch data structures come to life with smooth animations.",
+          "Understand each operation step clearly and intuitively.",
+          "View implementations in multiple languages.",
+          "Designed for students learning DSA from scratch.",
+        ],
+      },
+      github: "https://github.com/ArunShivhare/DS-Simulator.git",
+      live: "https://ds-simulator-iota.vercel.app/",
+    },
+    {
+      title: "Chai & Fund",
+      description: "A crowdfunding platform for creators.",
+      tech: [
+        "Next.js",
+        "React",
+        "Node",
+        "NextAuth",
+        "MongoDB Atlas",
+        "Tailwind CSS",
+        "Toastify",
+      ],
+      image: "/projects/chaifund.png",
+      details: {
+        overview:
+          "A creator-friendly crowdfunding platform where fans support creators by buying them a chai.",
+
+        features: [
+          "Direct financial support from fans",
+          "Creator dashboards",
+          "Authentication system",
+          "Community interaction",
+        ],
+
+        howItWorks: [
+          "Fans discover creators",
+          "Support by buying chai",
+          "Creators receive funds",
+          "Build stronger connections",
+        ],
+      },
+      github: "https://github.com/ArunShivhare/Chai_and_Fund.git",
+      live: "https://chai-and-fund.vercel.app/",
     },
     {
       title: "Golf Platform",
@@ -485,192 +487,173 @@ const Projects = () => {
     };
   }, [selected]);
 
+  
+  // Logic to show only top 4
+  const displayProjects = showAll ? projects : projects.slice(0, 4);
+
   return (
-    <section
-      id="projects"
-      className="py-28 bg-white dark:bg-gray-950 transition-colors duration-500"
-    >
+    <section id="projects" className="py-24 bg-white dark:bg-gray-950 transition-colors duration-500">
       <div className="max-w-6xl mx-auto px-6">
-        {/* Section Header */}
-        <div className="text-center mb-20">
-          <p className="text-sm uppercase tracking-widest text-indigo-600 mb-4">
-            Featured Work
-          </p>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white">
-            Recent <span className="text-indigo-600">Projects</span>
-          </h2>
-          <p className="mt-6 text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-            A collection of projects showcasing modern development practices and
-            problem-solving skills.
+        
+        {/* Header */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-6">
+          <div>
+            <p className="text-indigo-600 font-bold tracking-[0.2em] uppercase text-xs mb-3">Portfolio</p>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white">Featured <span className="text-indigo-600/80">Projects.</span></h2>
+          </div>
+          <p className="text-gray-500 dark:text-gray-400 max-w-xs border-l-2 border-indigo-600 pl-6 text-sm">
+            A collection of full-stack applications and technical experiments.
           </p>
         </div>
 
-        {/* Projects Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-          {projects.map((project, index) => (
-            <div
-              key={index}
-              onClick={() => setSelected(project)}
-              className="group cursor-pointer bg-gray-50 dark:bg-gray-900 border border-gray-100 dark:border-gray-800 rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300"
+        {/* Project Grid - Show Top 4 */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+          <AnimatePresence mode="popLayout">
+          {displayProjects.map((project) => (
+            <motion.div
+               key={project.title} // Use title as key for layout animations
+                layout // This makes the grid expansion smooth
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.9 }}
+                transition={{ duration: 0.4 }}
+                className="group cursor-pointer"
+                onClick={() => setSelected(project)}
             >
-              {/* Image */}
-              <div className="relative h-56 overflow-hidden">
-                <img
-                  src={project.image}
+              <div className="relative aspect-video overflow-hidden rounded-2xl bg-gray-100 dark:bg-gray-900 border border-gray-100 dark:border-gray-800">
+                <img 
+                  src={project.image} 
                   alt={project.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
-
-                {/* Overlay */}
-                <div
-                  className="
-      absolute inset-0 
-      bg-black/60 
-      flex items-center justify-center gap-6
-      opacity-100 md:opacity-0 
-      md:group-hover:opacity-100
-      transition duration-300
-    "
-                >
-                  <div
-                    className="
-    absolute inset-0 
-    bg-black/60 
-    flex items-center justify-center
-    opacity-100 md:opacity-0 
-    md:group-hover:opacity-100
-    transition duration-300
-  "
-                  >
-                    <p className="text-white text-sm font-medium tracking-wide">
-                      Click for more info →
-                    </p>
+                <div className="absolute inset-0 bg-gray-900/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-[2px]">
+                  <div className="bg-white text-gray-900 px-5 py-2 rounded-full font-bold text-sm flex items-center gap-2">
+                    View Case Study <FaChevronRight size={10} />
                   </div>
                 </div>
               </div>
 
-              {/* Content */}
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
-                  {project.title}
-                </h3>
+              <div className="mt-6">
+                <div className="flex justify-between items-center">
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white group-hover:text-indigo-600 transition-colors">
+                    {project.title}
+                  </h3>
+                  <div className="flex gap-4">
+                    <a href={project.github} className="text-gray-400 hover:text-indigo-600 transition-colors"><FaGithub size={18}/></a>
+                    <a href={project.live} className="text-gray-400 hover:text-indigo-600 transition-colors"><FaExternalLinkAlt size={16}/></a>
+                  </div>
+                </div>
+                <p className="text-gray-500 dark:text-gray-400 mt-2 text-sm line-clamp-1">{project.description}</p>
+              </div>
+            </motion.div>
+          ))}
+          </AnimatePresence>
+        </div>
 
-                <p className="text-gray-600 dark:text-gray-400 text-sm mb-5">
-                  {project.description}
-                </p>
+        {/* Dynamic Toggle Button */}
+        <motion.div layout className="mt-20 flex justify-center">
+          <button 
+            onClick={() => setShowAll(!showAll)} // Toggles between true/false
+            className="group flex items-center gap-3 px-8 py-4 bg-gray-900 dark:bg-white dark:text-gray-900 text-white rounded-full font-bold hover:bg-indigo-600 dark:hover:bg-indigo-500 transition-all shadow-xl"
+          >
+            {showAll ? (
+              <>
+                Show Less <FaChevronUp className="group-hover:-translate-y-1 transition-transform" />
+              </>
+            ) : (
+              <>
+                Explore Full Work History <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
+              </>
+            )}
+          </button>
+        </motion.div>
+      </div>
 
-                <div className="flex flex-wrap gap-2">
-                  {project.tech.map((item, i) => (
-                    <span
-                      key={i}
-                      className="px-3 py-1 text-xs bg-white dark:bg-gray-800 dark:text-gray-300 rounded-full border border-gray-200 dark:border-gray-700"
-                    >
-                      {item}
-                    </span>
-                  ))}
+      {/* DETAILED CASE STUDY MODAL */}
+      <AnimatePresence>
+        {selected && (
+          <motion.div 
+            initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-gray-900/90 backdrop-blur-sm"
+            onClick={() => setSelected(null)}
+          >
+            <motion.div 
+              initial={{ y: 50, opacity: 0 }} animate={{ y: 0, opacity: 1 }} exit={{ y: 50, opacity: 0 }}
+              className="bg-white dark:bg-gray-900 w-full max-w-5xl max-h-[90vh] overflow-y-auto rounded-3xl relative shadow-2xl"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Sticky Modal Header */}
+              <div className="sticky top-0 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md p-6 border-b dark:border-gray-800 flex justify-between items-center z-10">
+                <h3 className="text-xl font-bold dark:text-white">{selected.title}</h3>
+                <button onClick={() => setSelected(null)} className="p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full dark:text-white transition-colors">
+                  <FaTimes />
+                </button>
+              </div>
+
+              <div className="p-8 md:p-12 space-y-12">
+                {/* 1. Overview Section */}
+                <section>
+                  <h4 className="text-indigo-600 font-bold uppercase tracking-widest text-xs mb-4 text-center">Project Overview</h4>
+                  <p className="text-gray-700 dark:text-gray-300 text-lg leading-relaxed text-center max-w-3xl mx-auto">
+                    {selected.details.overview}
+                  </p>
+                </section>
+
+                <div className="grid md:grid-cols-2 gap-12 pt-8 border-t dark:border-gray-800">
+                  {/* 2. Features Section */}
+                  <div>
+                    <h4 className="font-bold dark:text-white mb-6 flex items-center gap-2">
+                      <span className="w-8 h-0.5 bg-indigo-600"></span> Key Features
+                    </h4>
+                    <ul className="space-y-4">
+                      {selected.details.features.map((feature, i) => (
+                        <li key={i} className="flex gap-3 text-gray-600 dark:text-gray-400 text-sm">
+                          <span className="text-indigo-500 mt-1">▹</span> {feature}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* 3. How It Works Section */}
+                  <div>
+                    <h4 className="font-bold dark:text-white mb-6 flex items-center gap-2">
+                      <span className="w-8 h-0.5 bg-indigo-600"></span> How It Works
+                    </h4>
+                    <div className="space-y-4">
+                      {selected.details.howItWorks.map((step, i) => (
+                        <div key={i} className="bg-gray-50 dark:bg-gray-800/50 p-4 rounded-xl border dark:border-gray-800">
+                          <p className="text-gray-700 dark:text-gray-300 text-sm">
+                            <span className="font-bold text-indigo-600 mr-2">0{i + 1}.</span> {step}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                {/* 4. Tech Stack & Footer */}
+                <div className="pt-8 border-t dark:border-gray-800 flex flex-col md:flex-row justify-between items-center gap-8">
+                  <div className="flex flex-wrap justify-center md:justify-start gap-2 max-w-md">
+                    {selected.tech.map((t, i) => (
+                      <span key={i} className="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400 text-[10px] uppercase font-bold rounded tracking-tighter">
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+                  <div className="flex gap-4">
+                    <a href={selected.live} target="_blank" className="px-6 py-3 bg-indigo-600 text-white rounded-xl font-bold flex items-center gap-2 hover:bg-indigo-700 shadow-lg shadow-indigo-600/20">
+                      Live Preview <FaExternalLinkAlt size={12} />
+                    </a>
+                    <a href={selected.github} target="_blank" className="px-6 py-3 bg-gray-100 dark:bg-gray-800 dark:text-white rounded-xl font-bold flex items-center gap-2 hover:bg-gray-200 dark:hover:bg-gray-700 transition">
+                      View Source <FaGithub size={14} />
+                    </a>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
-        </div>
-      </div>
-      {selected && (
-        <div
-          onClick={() => setSelected(null)}
-          className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 p-4 overflow-y-auto"
-        >
-          <div
-            onClick={(e) => e.stopPropagation()}
-            className="bg-white dark:bg-gray-900 p-6 md:p-8 rounded-3xl max-w-4xl w-full relative max-h-[90vh] overflow-y-auto"
-          >
-            {/* Close */}
-            <button
-              onClick={() => setSelected(null)}
-              className="absolute top-4 right-4 text-gray-600 dark:text-gray-400 hover:text-red-500"
-            >
-              <FaTimes />
-            </button>
-
-            {/* Image */}
-            <img
-              src={selected.image}
-              alt={selected.title}
-              className="w-full h-64 object-cover rounded-xl mb-6"
-            />
-
-            {/* Title */}
-            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-              {selected.title}
-            </h3>
-
-            {/* 🔥 THIS IS WHERE YOU ADD FULL DETAILS */}
-            {/* Overview */}
-            <div className="mb-6">
-              <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-                Overview
-              </h4>
-              <p className="text-gray-600 dark:text-gray-400">
-                {selected.details.overview}
-              </p>
-            </div>
-
-            {/* Features */}
-            <div className="mb-6">
-              <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-                Key Features
-              </h4>
-              <ul className="list-disc pl-5 space-y-1 text-gray-600 dark:text-gray-400">
-                {selected.details.features.map((item, i) => (
-                  <li key={i}>{item}</li>
-                ))}
-              </ul>
-            </div>
-
-            {/* How It Works */}
-            <div className="mb-6">
-              <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-                How It Works
-              </h4>
-              <ul className="list-disc pl-5 space-y-1 text-gray-600 dark:text-gray-400">
-                {selected.details.howItWorks.map((item, i) => (
-                  <li key={i}>{item}</li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Tech */}
-            <div className="flex flex-wrap gap-2 mb-6">
-              {selected.tech.map((item, i) => (
-                <span
-                  key={i}
-                  className="px-3 py-1 text-xs bg-gray-100 dark:bg-gray-100 rounded-full"
-                >
-                  {item}
-                </span>
-              ))}
-            </div>
-
-            {/* Buttons */}
-            <div className="flex gap-4">
-              <a
-                href={selected.live}
-                target="_blank"
-                className="px-5 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition"
-              >
-                Live Demo
-              </a>
-
-              <a
-                href={selected.github}
-                target="_blank"
-                className="px-5 py-2 border rounded-lg hover:bg-gray-100 dark:hover:bg-gray-100 transition"
-              >
-                GitHub
-              </a>
-            </div>
-          </div>
-        </div>
-      )}
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 };
