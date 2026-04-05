@@ -28,7 +28,7 @@ const Footer = () => {
           <div className="flex items-center gap-4">
             {[
               { icon: <FaGithub />, href: "https://github.com/ArunShivhare" },
-              { icon: <FaLinkedin />, href: "https://linkedin.com" },
+              { icon: <FaLinkedin />, href: "https://www.linkedin.com/in/arun-shivhare" },
               { icon: <SiLeetcode />, href: "https://leetcode.com/u/Arun_Shivhare_/" }
             ].map((social, i) => (
               <motion.a
