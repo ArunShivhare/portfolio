@@ -1,6 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FaGithub, FaExternalLinkAlt, FaTimes, FaArrowRight, FaChevronRight, FaChevronUp } from "react-icons/fa";
+import {
+  FaGithub,
+  FaExternalLinkAlt,
+  FaTimes,
+  FaArrowRight,
+  FaChevronRight,
+  FaChevronUp,
+} from "react-icons/fa";
 
 const Projects = () => {
   const [selected, setSelected] = useState(null);
@@ -46,28 +53,38 @@ const Projects = () => {
       live: "https://nexus-frontend-orpin-theta.vercel.app/",
     },
     {
-      title: "Data Structure Simulator",
-      description: "Learn Data Structures Visually & Easily.",
-      tech: ["React", "Tailwind CSS", "Framer Motion"],
+      title: "Data Structure Learning Platform",
+      description:
+        "Interactive EdTech platform to learn, practice, and compete in Data Structures.",
+      tech: [
+        "React",
+        "Tailwind CSS",
+        "Framer Motion",
+        "Firebase Auth",
+        "Firestore",
+      ],
       image: "/projects/DSS.png",
+
       details: {
         overview:
-          "Understand how data structures work internally with beautiful animations and step-by-step simulations. No more confusion — just clear concepts.",
+          "A full-stack interactive platform that enables users to learn data structures through visual simulations, track structured progress, and participate in dynamic quizzes with real-time leaderboard rankings.",
 
         features: [
-          "Interactive Visualization",
-          "Step-by-Step Simulation",
-          "Code Preview",
-          "Beginner Friendly",
+          "Interactive data structure visualizations with step-by-step animations",
+          "Structured learning roadmap with progress tracking per user",
+          "Admin-controlled dynamic quiz system with multiple quiz versions",
+          "Per-attempt tracking with score history and leaderboard ranking",
+          "Secure authentication and multi-user data isolation using Firebase",
         ],
 
         howItWorks: [
-          "Watch data structures come to life with smooth animations.",
-          "Understand each operation step clearly and intuitively.",
-          "View implementations in multiple languages.",
-          "Designed for students learning DSA from scratch.",
+          "Users explore data structures through guided steps including theory, implementation, visualization, and practice.",
+          "Progress is tracked and persisted per user, unlocking features sequentially.",
+          "Admins can create and publish quizzes dynamically without redeployment.",
+          "User attempts are recorded per quiz, enabling competitive leaderboards and performance tracking.",
         ],
       },
+
       github: "https://github.com/ArunShivhare/DS-Simulator.git",
       live: "https://ds-simulator-iota.vercel.app/",
     },
@@ -487,19 +504,24 @@ const Projects = () => {
     };
   }, [selected]);
 
-  
   // Logic to show only top 4
   const displayProjects = showAll ? projects : projects.slice(0, 4);
 
   return (
-    <section id="projects" className="py-24 bg-white dark:bg-gray-950 transition-colors duration-500">
+    <section
+      id="projects"
+      className="py-24 bg-white dark:bg-gray-950 transition-colors duration-500"
+    >
       <div className="max-w-6xl mx-auto px-6">
-        
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-6">
           <div>
-            <p className="text-indigo-600 font-bold tracking-[0.2em] uppercase text-xs mb-3">Portfolio</p>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white">Featured <span className="text-indigo-600/80">Projects.</span></h2>
+            <p className="text-indigo-600 font-bold tracking-[0.2em] uppercase text-xs mb-3">
+              Portfolio
+            </p>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white">
+              Featured <span className="text-indigo-600/80">Projects.</span>
+            </h2>
           </div>
           <p className="text-gray-500 dark:text-gray-400 max-w-xs border-l-2 border-indigo-600 pl-6 text-sm">
             A collection of full-stack applications and technical experiments.
@@ -509,9 +531,9 @@ const Projects = () => {
         {/* Project Grid - Show Top 4 */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
           <AnimatePresence mode="popLayout">
-          {displayProjects.map((project) => (
-            <motion.div
-               key={project.title} // Use title as key for layout animations
+            {displayProjects.map((project) => (
+              <motion.div
+                key={project.title} // Use title as key for layout animations
                 layout // This makes the grid expansion smooth
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -519,50 +541,64 @@ const Projects = () => {
                 transition={{ duration: 0.4 }}
                 className="group cursor-pointer"
                 onClick={() => setSelected(project)}
-            >
-              <div className="relative aspect-video overflow-hidden rounded-2xl bg-gray-100 dark:bg-gray-900 border border-gray-100 dark:border-gray-800">
-                <img 
-                  src={project.image} 
-                  alt={project.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                />
-                <div className="absolute inset-0 bg-gray-900/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-[2px]">
-                  <div className="bg-white text-gray-900 px-5 py-2 rounded-full font-bold text-sm flex items-center gap-2">
-                    View Case Study <FaChevronRight size={10} />
+              >
+                <div className="relative aspect-video overflow-hidden rounded-2xl bg-gray-100 dark:bg-gray-900 border border-gray-100 dark:border-gray-800">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gray-900/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-[2px]">
+                    <div className="bg-white text-gray-900 px-5 py-2 rounded-full font-bold text-sm flex items-center gap-2">
+                      View Case Study <FaChevronRight size={10} />
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              <div className="mt-6">
-                <div className="flex justify-between items-center">
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white group-hover:text-indigo-600 transition-colors">
-                    {project.title}
-                  </h3>
-                  <div className="flex gap-4">
-                    <a href={project.github} className="text-gray-400 hover:text-indigo-600 transition-colors"><FaGithub size={18}/></a>
-                    <a href={project.live} className="text-gray-400 hover:text-indigo-600 transition-colors"><FaExternalLinkAlt size={16}/></a>
+                <div className="mt-6">
+                  <div className="flex justify-between items-center">
+                    <h3 className="text-xl font-bold text-gray-900 dark:text-white group-hover:text-indigo-600 transition-colors">
+                      {project.title}
+                    </h3>
+                    <div className="flex gap-4">
+                      <a
+                        href={project.github}
+                        className="text-gray-400 hover:text-indigo-600 transition-colors"
+                      >
+                        <FaGithub size={18} />
+                      </a>
+                      <a
+                        href={project.live}
+                        className="text-gray-400 hover:text-indigo-600 transition-colors"
+                      >
+                        <FaExternalLinkAlt size={16} />
+                      </a>
+                    </div>
                   </div>
+                  <p className="text-gray-500 dark:text-gray-400 mt-2 text-sm line-clamp-1">
+                    {project.description}
+                  </p>
                 </div>
-                <p className="text-gray-500 dark:text-gray-400 mt-2 text-sm line-clamp-1">{project.description}</p>
-              </div>
-            </motion.div>
-          ))}
+              </motion.div>
+            ))}
           </AnimatePresence>
         </div>
 
         {/* Dynamic Toggle Button */}
         <motion.div layout className="mt-20 flex justify-center">
-          <button 
+          <button
             onClick={() => setShowAll(!showAll)} // Toggles between true/false
             className="group flex items-center gap-3 px-8 py-4 bg-gray-900 dark:bg-white dark:text-gray-900 text-white rounded-full font-bold hover:bg-indigo-600 dark:hover:bg-indigo-500 transition-all shadow-xl"
           >
             {showAll ? (
               <>
-                Show Less <FaChevronUp className="group-hover:-translate-y-1 transition-transform" />
+                Show Less{" "}
+                <FaChevronUp className="group-hover:-translate-y-1 transition-transform" />
               </>
             ) : (
               <>
-                Explore Full Work History <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
+                Explore Full Work History{" "}
+                <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
               </>
             )}
           </button>
@@ -572,20 +608,29 @@ const Projects = () => {
       {/* DETAILED CASE STUDY MODAL */}
       <AnimatePresence>
         {selected && (
-          <motion.div 
-            initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
             className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-gray-900/90 backdrop-blur-sm"
             onClick={() => setSelected(null)}
           >
-            <motion.div 
-              initial={{ y: 50, opacity: 0 }} animate={{ y: 0, opacity: 1 }} exit={{ y: 50, opacity: 0 }}
+            <motion.div
+              initial={{ y: 50, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: 50, opacity: 0 }}
               className="bg-white dark:bg-gray-900 w-full max-w-5xl max-h-[90vh] overflow-y-auto rounded-3xl relative shadow-2xl"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Sticky Modal Header */}
               <div className="sticky top-0 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md p-6 border-b dark:border-gray-800 flex justify-between items-center z-10">
-                <h3 className="text-xl font-bold dark:text-white">{selected.title}</h3>
-                <button onClick={() => setSelected(null)} className="p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full dark:text-white transition-colors">
+                <h3 className="text-xl font-bold dark:text-white">
+                  {selected.title}
+                </h3>
+                <button
+                  onClick={() => setSelected(null)}
+                  className="p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full dark:text-white transition-colors"
+                >
                   <FaTimes />
                 </button>
               </div>
@@ -593,7 +638,9 @@ const Projects = () => {
               <div className="p-8 md:p-12 space-y-12">
                 {/* 1. Overview Section */}
                 <section>
-                  <h4 className="text-indigo-600 font-bold uppercase tracking-widest text-xs mb-4 text-center">Project Overview</h4>
+                  <h4 className="text-indigo-600 font-bold uppercase tracking-widest text-xs mb-4 text-center">
+                    Project Overview
+                  </h4>
                   <p className="text-gray-700 dark:text-gray-300 text-lg leading-relaxed text-center max-w-3xl mx-auto">
                     {selected.details.overview}
                   </p>
@@ -603,12 +650,17 @@ const Projects = () => {
                   {/* 2. Features Section */}
                   <div>
                     <h4 className="font-bold dark:text-white mb-6 flex items-center gap-2">
-                      <span className="w-8 h-0.5 bg-indigo-600"></span> Key Features
+                      <span className="w-8 h-0.5 bg-indigo-600"></span> Key
+                      Features
                     </h4>
                     <ul className="space-y-4">
                       {selected.details.features.map((feature, i) => (
-                        <li key={i} className="flex gap-3 text-gray-600 dark:text-gray-400 text-sm">
-                          <span className="text-indigo-500 mt-1">▹</span> {feature}
+                        <li
+                          key={i}
+                          className="flex gap-3 text-gray-600 dark:text-gray-400 text-sm"
+                        >
+                          <span className="text-indigo-500 mt-1">▹</span>{" "}
+                          {feature}
                         </li>
                       ))}
                     </ul>
@@ -617,13 +669,20 @@ const Projects = () => {
                   {/* 3. How It Works Section */}
                   <div>
                     <h4 className="font-bold dark:text-white mb-6 flex items-center gap-2">
-                      <span className="w-8 h-0.5 bg-indigo-600"></span> How It Works
+                      <span className="w-8 h-0.5 bg-indigo-600"></span> How It
+                      Works
                     </h4>
                     <div className="space-y-4">
                       {selected.details.howItWorks.map((step, i) => (
-                        <div key={i} className="bg-gray-50 dark:bg-gray-800/50 p-4 rounded-xl border dark:border-gray-800">
+                        <div
+                          key={i}
+                          className="bg-gray-50 dark:bg-gray-800/50 p-4 rounded-xl border dark:border-gray-800"
+                        >
                           <p className="text-gray-700 dark:text-gray-300 text-sm">
-                            <span className="font-bold text-indigo-600 mr-2">0{i + 1}.</span> {step}
+                            <span className="font-bold text-indigo-600 mr-2">
+                              0{i + 1}.
+                            </span>{" "}
+                            {step}
                           </p>
                         </div>
                       ))}
@@ -635,16 +694,27 @@ const Projects = () => {
                 <div className="pt-8 border-t dark:border-gray-800 flex flex-col md:flex-row justify-between items-center gap-8">
                   <div className="flex flex-wrap justify-center md:justify-start gap-2 max-w-md">
                     {selected.tech.map((t, i) => (
-                      <span key={i} className="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400 text-[10px] uppercase font-bold rounded tracking-tighter">
+                      <span
+                        key={i}
+                        className="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400 text-[10px] uppercase font-bold rounded tracking-tighter"
+                      >
                         {t}
                       </span>
                     ))}
                   </div>
                   <div className="flex gap-4">
-                    <a href={selected.live} target="_blank" className="px-6 py-3 bg-indigo-600 text-white rounded-xl font-bold flex items-center gap-2 hover:bg-indigo-700 shadow-lg shadow-indigo-600/20">
+                    <a
+                      href={selected.live}
+                      target="_blank"
+                      className="px-6 py-3 bg-indigo-600 text-white rounded-xl font-bold flex items-center gap-2 hover:bg-indigo-700 shadow-lg shadow-indigo-600/20"
+                    >
                       Live Preview <FaExternalLinkAlt size={12} />
                     </a>
-                    <a href={selected.github} target="_blank" className="px-6 py-3 bg-gray-100 dark:bg-gray-800 dark:text-white rounded-xl font-bold flex items-center gap-2 hover:bg-gray-200 dark:hover:bg-gray-700 transition">
+                    <a
+                      href={selected.github}
+                      target="_blank"
+                      className="px-6 py-3 bg-gray-100 dark:bg-gray-800 dark:text-white rounded-xl font-bold flex items-center gap-2 hover:bg-gray-200 dark:hover:bg-gray-700 transition"
+                    >
                       View Source <FaGithub size={14} />
                     </a>
                   </div>
