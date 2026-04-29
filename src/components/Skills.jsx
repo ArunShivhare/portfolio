@@ -115,6 +115,30 @@ const Skills = () => {
               <div className="mt-6 h-px w-full bg-gray-100 dark:bg-gray-800 group-hover:bg-indigo-600/30 transition-colors" />
             </motion.div>
           ))}
+          <motion.div
+  variants={itemVars}
+  className="group flex items-center justify-center"
+>
+  <div className="
+    w-full h-full min-h-40
+    flex flex-col items-center justify-center text-center
+    rounded-2xl 
+    border border-dashed border-indigo-200 dark:border-gray-700
+    bg-linear-to-br from-indigo-50/40 to-transparent 
+    dark:from-indigo-900/10
+    p-6
+  ">
+    <div className="text-3xl mb-3">⚡</div>
+
+    <h3 className="text-sm font-semibold text-gray-900 dark:text-white mb-2">
+      Always Improving
+    </h3>
+
+    <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
+      Continuously learning new technologies, improving problem-solving, and building impactful systems.
+    </p>
+  </div>
+</motion.div>
         </motion.div>
       </div>
     </section>
