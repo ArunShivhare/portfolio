@@ -9,7 +9,7 @@ const Achievements = () => {
   const achievements = [
     {
       title: "LeetCode",
-      description: "280+ problems solved • 8 badges earned",
+      description: "380+ problems solved • 12 badges earned",
       year: "2026",
       image: "/achievements/leetcode.png",
       link: "https://leetcode.com/u/Arun_Shivhare_/",
