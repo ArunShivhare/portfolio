@@ -123,6 +123,48 @@ const Projects = () => {
       live: "https://chai-and-fund.vercel.app/",
     },
     {
+      title: "Zenith",
+      description: "Smart Daily Execution System & Productivity Dashboard",
+      tech: [
+        "Next.js",
+        "React",
+        "Supabase",
+        "PostgreSQL",
+        "Tailwind CSS",
+        "Vercel",
+      ],
+      image: "/projects/zenith.png",
+
+      details: {
+        overview:
+          "A smart daily execution system designed to optimize personal productivity through structured time-blocking, habit building, and deep focus analytics. The platform features a dynamic digital dashboard that helps users schedule their day, track consistency, and analyze execution metrics.",
+
+        features: [
+          "Daily task management with integrated time-blocking slots",
+          "Habit tracker with streak monitoring and consistency metrics",
+          "Dedicated focus mode with an immersive UI to minimize distractions",
+          "Digital dashboard providing real-time overview of daily schedules",
+          "Daily analysis page with automated productivity scoring",
+          "Secure user authentication for private data protection",
+          "Row Level Security (RLS) ensuring strict user data isolation",
+          "Data visualization charts for historic performance trends",
+          "Responsive layout optimized for both mobile and desktop execution",
+        ],
+
+        howItWorks: [
+          "User logs in to access their personalized digital dashboard",
+          "User schedules their day by mapping tasks directly into built-in time slots",
+          "User toggles into focus mode to execute tasks without peripheral noise",
+          "User logs daily habit completions to update continuous streaks",
+          "System logs execution data to generate end-of-day productivity metrics",
+          "User reviews the analysis page to identify time drains and optimize habits",
+        ],
+      },
+
+      github: "https://github.com/ArunShivhare/Zenith-A-Smart-Daily-Execution-System.git",
+      live: "https://zenith-a-smart-daily-execution-syst.vercel.app/dashboard",
+    },
+    {
       title: "Golf Platform",
       description: "Full-Stack Subscription-Based Gaming & Charity Platform",
       tech: [
